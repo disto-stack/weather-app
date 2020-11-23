@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
 </head>
+
 <body>
-    <h1>Hi there</h1>
+    <header>
+        <h1>My weather</h1>
+    </header>
+
+    <main>
+        <form action="post" >
+            <label for="location">Set location</label>
+            <input type="text" placeholder="Set location">
+
+            <input type="submit" value="Search">
+        </form>
+
+        <div id="info-content">
+            <img src="" alt="">
+            <div id="waether-detail">
+                <h2 id="city"></h2>
+                <p id="temperature"></p>
+                <p id="state"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>My weather</footer>
 </body>
 </html>

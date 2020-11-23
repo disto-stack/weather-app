@@ -25,7 +25,9 @@
     "url": "https://github.com/disto-stack/weather-app/issues"
   },
   "homepage": "https://github.com/disto-stack/weather-app#readme",
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
