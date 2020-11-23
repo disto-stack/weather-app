@@ -4,6 +4,9 @@ class App {
     constructor() {
         this.weather = new Weather();
 
+        this.infoContent = document.querySelector('#info-content');
+        this.loading = document.querySelector('#loading');
+
         this.img = document.querySelector('#weatherIcon');
         this.city = document.querySelector('#city');
         this.temperature = document.querySelector('#temperature');
@@ -23,6 +26,9 @@ class App {
 
     async getWeatherData(location) {
         this.data = await this.weather.getWeather(location);
+
+        this.infoContent.style.display = "none";
+        this.loading.style.display = "block";
     }
 
     renderElements() {
@@ -32,6 +38,9 @@ class App {
         this.state.innerHTML = this.data.weather[0].main;
 
         this.temperature.innerHTML = this.data.main.temp;
+
+        this.loading.style.display = "none";
+        this.infoContent.style.display = "block";
     }
 }
 
