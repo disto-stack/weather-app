@@ -10,16 +10,22 @@ class App {
         this.state = document.querySelector('#state');
 
         // Render initial data
+        this.loadInitial();
+    }
+
+    /**
+     * Load initial data of App (Default location: Manizales-CO)
+     */
+    async loadInitial() {
+        await this.getWeatherData();
         this.renderElements(); 
     }
 
-    async getWeatherData() {
-        this.data = await this.weather.getWeather();
+    async getWeatherData(location) {
+        this.data = await this.weather.getWeather(location);
     }
 
-    async renderElements() {
-        await this.getWeatherData();
-
+    renderElements() {
         this.city.innerHTML = this.data.name;
 
         this.img.setAttribute('src', `http://openweathermap.org/img/wn/${this.data.weather[0].icon}@4x.png`);
