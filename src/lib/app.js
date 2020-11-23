@@ -28,7 +28,7 @@ class App {
         this.data = await this.weather.getWeather(location);
 
         this.infoContent.style.display = "none";
-        this.loading.style.display = "block";
+        this.loading.style.display = "flex";
     }
 
     renderElements() {
@@ -37,10 +37,10 @@ class App {
         this.img.setAttribute('src', `http://openweathermap.org/img/wn/${this.data.weather[0].icon}@4x.png`);
         this.state.innerHTML = this.data.weather[0].main;
 
-        this.temperature.innerHTML = this.data.main.temp;
+        this.temperature.innerHTML = `${Math.round(this.data.main.temp - 273.15)} °C`;
 
         this.loading.style.display = "none";
-        this.infoContent.style.display = "block";
+        this.infoContent.style.display = "flex";
     }
 }
 
