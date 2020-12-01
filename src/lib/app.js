@@ -7,11 +7,6 @@ class App {
         this.infoContent = document.querySelector('#info-content');
         this.loading = document.querySelector('#loading');
 
-        this.img = document.querySelector('#weatherIcon');
-        this.city = document.querySelector('#city');
-        this.temperature = document.querySelector('#temperature');
-        this.state = document.querySelector('#state');
-
         // Render initial data
         this.loadInitial();
     }
@@ -31,14 +26,18 @@ class App {
         this.loading.style.display = "flex";
     }
 
-    renderElements() {
-        this.city.innerHTML = this.data.name;
+    renderElements() {       
+        let dataHtml = `
+            <img alt="Weather state icon" id="weatherIcon" src="http://openweathermap.org/img/wn/${this.data.weather[0].icon}@4x.png">
+            <div id="weather-detail">
+                <h2 id="city">${this.data.name}</h2>
+                <p id="temperature">${Math.round(this.data.main.temp - 273.15)} °C</p>
+                <p id="state">${this.data.weather[0].main}</p>
+            </div>
+        `
 
-        this.img.setAttribute('src', `http://openweathermap.org/img/wn/${this.data.weather[0].icon}@4x.png`);
-        this.state.innerHTML = this.data.weather[0].main;
-
-        this.temperature.innerHTML = `${Math.round(this.data.main.temp - 273.15)} °C`;
-
+        document.querySelector('#info-content').innerHTML = dataHtml;
+    
         this.loading.style.display = "none";
         this.infoContent.style.display = "flex";
     }
