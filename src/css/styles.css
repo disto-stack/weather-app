@@ -4,8 +4,15 @@ html {
     font-family: 'Quicksand', sans-serif;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 header {
-    background-color: rgba(44, 62, 80,1.0);
+    background-color: #574f7d;
     text-align: center;
     padding: 10px;
 }
@@ -16,23 +23,47 @@ header h1 {
 }
 
 main.app-main {
+    flex-grow: 2;
     margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 form {
     display: flex;
-    width: 75%;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
+
+form input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid gray;
+}
+
+form input[type="submit"] {
+    color: #e0f0ea;
+    background-color: #574f7d;
+    padding: 8px;
+    border: 0;
+    border-radius: 3px;
+    transition: opacity .1s ease;
+}
+
+form input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
 
 div#info-container {
     width: 80%;
-    background-color: #7f8c8d;
-    display: flex;
-    flex-direction: column;
+    background-color: #95adbe;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 16px 35px -12px #AFAFAF; 
+    box-shadow: 2px 16px 35px -12px #AFAFAF;
 }
 div#info-content {
     display: none;
