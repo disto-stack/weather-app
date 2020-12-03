@@ -57,18 +57,31 @@ form input[type="submit"]:hover {
     opacity: 0.8;
 }
 
-
 div#info-container {
     width: 80%;
     background-color: #95adbe;
     border-radius: 5px;
     -webkit-box-shadow: 2px 16px 35px -12px #AFAFAF; 
     box-shadow: 2px 16px 35px -12px #AFAFAF;
+    transform: scaleY(1);
+    transition: transform .1s ease;
 }
+
+div#info-container:empty {
+    height: 20px;
+    transform: scaleY(0);
+}
+
 div#info-content {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    div#info-container {
+        width: 55%;
+    }
 }
