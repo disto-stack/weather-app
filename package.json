@@ -7,7 +7,8 @@
     "build": "webpack --mode production",
     "builddev": "webpack --mode development",
     "start": "webpack serve --mode development --open msedge.exe",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/disto-stack/weather-app#readme",
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
